@@ -7,8 +7,7 @@ Resources:
     Type: AWS::S3::Bucket
     Properties:
       BucketName: sample-app-bucket-12345
-      # FIX: Changed from PublicRead to Private to prevent public READ access (CWE-284)
-      AccessControl: Private
+      AccessControl: Private                 # FIXED: Changed from PublicRead to Private to prevent public READ access (CWE-284)
       # Added cross-region replication configuration for improved data durability and availability
       ReplicationConfiguration:
         Role: !GetAtt ReplicationRole.Arn
